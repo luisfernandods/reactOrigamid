@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React para Iniciantes</title>
+
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7/babel.min"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="titulo"></div>
+    <div id="contador"></div>
+    <script type="text/babel">
+      const App = () => {
+        return <div>Meuuu aplicativo</div>;
+      };
+
+      const ComprarBtn = () => {
+        const [contador, setContador] = React.useState(0);
+
+        const clicou = () => {
+          setContador(contador + 1);
+        };
+        return (
+          <div>
+            <button onClick={clicou}> Comprar </button>
+            <p>O Contador está em {contador}</p>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("titulo"));
+      ReactDOM.render(<ComprarBtn />, document.getElementById("contador"));
+    </script>
+  </body>
+</html>
