@@ -29,12 +29,9 @@
       const ComprarBtn = () => {
         const [contador, setContador] = React.useState(0);
 
-        const clicou = () => {
-          setContador(contador + 1);
-        };
         return (
           <div>
-            <button onClick={clicou}> Comprar </button>
+            <button onClick={() => setContador(contador + 1)}> Comprar </button>
             <p>O Contador está em {contador}</p>
           </div>
         );
